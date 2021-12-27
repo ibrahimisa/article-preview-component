@@ -1,0 +1,92 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Manrope";
+  font-size: $fontSize;
+  background: $lightGrayishBlue;
+}
+
+.container{
+    min-height: 95vh;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+  width: 23.4rem;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: clip;
+  font-size: 1rem;
+  &__image {
+    height: 15.5rem;
+    background-image: url(../images/drawers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__content {
+    padding: 2rem 2rem 1rem;
+  }
+}
+
+.content {
+  &__title {
+    font-weight: 700;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    color: $veryDarkGrayishBlue;
+  }
+  &__text {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    color: $desaturatedDarkBlue;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__share-icon {
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+      background: $lightGrayishBlue;
+    }
+  }
+}
+
+.footer {
+  &__profile {
+    display: flex;
+    align-items: center;
+    &__image {
+      border-radius: 50%;
+      max-width: 20%;
+      margin-right: 0.5rem;
+    }
+    &__name{
+        color: $veryDarkGrayishBlue;
+    }
+    &__date{
+        color: $grayishBlue;
+    }
+  }
+}
+
+@media screen and (min-width: 1029px) {
+    .card{
+        font-size: 1.1rem;
+        width: 50rem;
+        display: flex;
+        &__image{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles/style.css">
+
   <title>Frontend Mentor | Article preview component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -16,21 +16,45 @@
 </head>
 <body>
 
-  Shift the overall look and feel by adding these wonderful 
+  <div class="container">
+    <div class="card">
+    <div class="card__image">
+      <!-- <img src="images/drawers.jpg" alt=""> -->
+    </div>
+    <div class="card__content">
+      <h3 class="content__title">
+        Shift the overall look and feel by adding these wonderful 
   touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
+      </h3>
+      <p class="content__text">
+        Ever been in a room and felt like something was missing? Perhaps 
   it felt slightly bare and uninviting. I’ve got some simple tips 
   to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
+      </p>
+      <div class="content__footer">
+        <div class="footer__profile">
+            <img class="footer__profile__image" src="images/avatar-michelle.jpg" alt="Michelle profile pic">
+          <div>
+            <h4 class="footer__profile__name">
+              Michelle Appleton
+            </h4>
+            <h5 class="footer__profile__date">
+              28 Jun 2020
+            </h5>
+          </div>
+        </div>
+        <button class="content__footer__share-icon">
+          <img src="images/icon-share.svg" alt="share">
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Ibrahim Isa Jajere</a>.
   </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
