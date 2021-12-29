@@ -8,23 +8,25 @@
 
 body {
   min-height: 100vh;
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
   font-size: $fontSize;
   background: $lightGrayishBlue;
 }
 
-.container{
-    min-height: 95vh;
-    display: grid;
-    place-items: center;
+.container {
+  min-height: 95vh;
+  display: grid;
+  place-items: center;
 }
 
+// card and its direct child elements style
 .card {
-  width: 23.4rem;
+  width: 80%;
   background-color: white;
   border-radius: 1rem;
-  overflow: clip;
+  overflow: hidden;
   font-size: 1rem;
+  box-shadow: 0 0 1rem .1px $desaturatedDarkBlue;
   &__image {
     height: 15.5rem;
     background-image: url(../images/drawers.jpg);
@@ -32,11 +34,15 @@ body {
     background-size: cover;
   }
   &__content {
-    padding: 2rem 2rem 1rem;
+    // padding: 2rem 2rem 0;
   }
 }
 
+// content's direct elements style
 .content {
+  &__body{
+    padding: 2rem 2rem 1rem;
+  }
   &__title {
     font-weight: 700;
     line-height: 1.5rem;
@@ -45,48 +51,117 @@ body {
   }
   &__text {
     line-height: 1.5rem;
-    margin-bottom: 1rem;
     color: $desaturatedDarkBlue;
   }
   &__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &__share-icon {
-      padding: 1rem;
-      cursor: pointer;
-      border-radius: 50%;
-      background: $lightGrayishBlue;
-    }
+    position: relative;
   }
 }
 
+// footer direct elements style
 .footer {
   &__profile {
+    padding: 1rem 2rem 1rem;
     display: flex;
     align-items: center;
-    &__image {
-      border-radius: 50%;
-      max-width: 20%;
-      margin-right: 0.5rem;
-    }
-    &__name{
-        color: $veryDarkGrayishBlue;
-    }
-    &__date{
-        color: $grayishBlue;
-    }
+  }
+  &__share_icon {
+    position: absolute;
+    right: 2rem;
+    bottom: 50%;
+    transform: translateY(50%);
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background: $lightGrayishBlue;
+  }
+  &__social_icons_wrapper{
+    display: none;
+    padding: 1rem 2rem 1rem;
+    background-color: $veryDarkGrayishBlue;
   }
 }
 
-@media screen and (min-width: 1029px) {
-    .card{
-        font-size: 1.1rem;
-        width: 50rem;
-        display: flex;
-        &__image{
-            width: 100%;
-            height: auto;
-        }
+.social_icons_inner{
+  padding: .55rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  & > *{
+  z-index: 9999;
+  }
+  &__text{
+    text-transform: uppercase;
+    color: $desaturatedDarkBlue;
+  }
+}
+
+// profile direct elements style
+.profile {
+  &__image {
+    border-radius: 50%;
+    max-width: 12%;
+    margin-right: 0.7rem;
+  }
+  &__name {
+    color: $veryDarkGrayishBlue;
+  }
+  &__date {
+    color: $grayishBlue;
+  }
+}
+
+.show_social_icons{
+  .footer__share_icon{
+    background-color: $desaturatedDarkBlue;
+     #share_svg{
+        fill: white;
+     }
+  }
+  .footer__social_icons_wrapper{
+    display: block;
+  }
+  .footer__profile{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    font-size: 1.1rem;
+    width: 50rem;
+    display: flex;
+    overflow: visible;
+    &__image {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem 0 0 1rem;
     }
+  }
+
+  .show_social_icons{
+  .footer__social_icons_wrapper{
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    display: block;
+    position: absolute;
+    right: -12%;
+    bottom: 100%;
+    box-shadow: 0 0 .5rem .1rem $veryDarkGrayishBlue;
+    &::after{
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      bottom: -.9rem;
+      transform: rotate(45deg) translate(-50%);
+      left: 50%;
+      background-color: $veryDarkGrayishBlue;
+      box-shadow: 0 0 .5rem .1rem $veryDarkGrayishBlue;
+    }
+  }
+  .footer__profile{
+    display: flex;
+  }
+}
 }

@@ -10,7 +10,7 @@
 
 body {
   min-height: 100vh;
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
   font-size: 13px;
   background: #ecf2f8; }
 
@@ -20,19 +20,20 @@ body {
   place-items: center; }
 
 .card {
-  width: 23.4rem;
+  width: 80%;
   background-color: white;
   border-radius: 1rem;
-  overflow: clip;
-  font-size: 1rem; }
+  overflow: hidden;
+  font-size: 1rem;
+  box-shadow: 0 0 1rem 0.1px #6d7f97; }
   .card__image {
     height: 15.5rem;
     background-image: url(../images/drawers.jpg);
     background-repeat: no-repeat;
     background-size: cover; }
-  .card__content {
-    padding: 2rem 2rem 1rem; }
 
+.content__body {
+  padding: 2rem 2rem 1rem; }
 .content__title {
   font-weight: 700;
   line-height: 1.5rem;
@@ -40,37 +41,87 @@ body {
   color: #48556a; }
 .content__text {
   line-height: 1.5rem;
-  margin-bottom: 1rem;
   color: #6d7f97; }
 .content__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .content__footer__share-icon {
-    padding: 1rem;
-    cursor: pointer;
-    border-radius: 50%;
-    background: #ecf2f8; }
+  position: relative; }
 
 .footer__profile {
+  padding: 1rem 2rem 1rem;
   display: flex;
   align-items: center; }
-  .footer__profile__image {
-    border-radius: 50%;
-    max-width: 20%;
-    margin-right: 0.5rem; }
-  .footer__profile__name {
-    color: #48556a; }
-  .footer__profile__date {
-    color: #9eafc2; }
+.footer__share_icon {
+  position: absolute;
+  right: 2rem;
+  bottom: 50%;
+  transform: translateY(50%);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ecf2f8; }
+.footer__social_icons_wrapper {
+  display: none;
+  padding: 1rem 2rem 1rem;
+  background-color: #48556a; }
 
-@media screen and (min-width: 1029px) {
+.social_icons_inner {
+  padding: .55rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+  .social_icons_inner > * {
+    z-index: 9999; }
+  .social_icons_inner__text {
+    text-transform: uppercase;
+    color: #6d7f97; }
+
+.profile__image {
+  border-radius: 50%;
+  max-width: 12%;
+  margin-right: 0.7rem; }
+.profile__name {
+  color: #48556a; }
+.profile__date {
+  color: #9eafc2; }
+
+.show_social_icons .footer__share_icon {
+  background-color: #6d7f97; }
+  .show_social_icons .footer__share_icon #share_svg {
+    fill: white; }
+.show_social_icons .footer__social_icons_wrapper {
+  display: block; }
+.show_social_icons .footer__profile {
+  display: none; }
+
+@media screen and (min-width: 800px) {
   .card {
     font-size: 1.1rem;
     width: 50rem;
-    display: flex; }
+    display: flex;
+    overflow: visible; }
     .card__image {
       width: 100%;
-      height: auto; } }
+      height: auto;
+      border-radius: 1rem 0 0 1rem; }
+
+  .show_social_icons .footer__social_icons_wrapper {
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    display: block;
+    position: absolute;
+    right: -12%;
+    bottom: 100%;
+    box-shadow: 0 0 0.5rem 0.1rem #48556a; }
+    .show_social_icons .footer__social_icons_wrapper::after {
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      bottom: -.9rem;
+      transform: rotate(45deg) translate(-50%);
+      left: 50%;
+      background-color: #48556a;
+      box-shadow: 0 0 0.5rem 0.1rem #48556a; }
+  .show_social_icons .footer__profile {
+    display: flex; } }
 
 /*# sourceMappingURL=style.css.map */
