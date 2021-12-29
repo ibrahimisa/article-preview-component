@@ -48,6 +48,22 @@ Users should be able to:
 
 ### What I learned
 
+```css
+  &::after{
+      content: "";
+      position: absolute;
+      width: 0rem;
+      height: 0rem;
+      left: 50%;
+      top: 100%;
+      margin-left: -1.5rem;
+      border-top: 1.5rem solid $veryDarkGrayishBlue;
+      border-left: 1.5rem solid transparent;
+      border-right: 1.5rem solid transparent;
+    }
+```
+cool css snippet that i use to add the tooltip triangle.
+
 ```js
   matchMedia("(min-width: 800px)").matches
 ```
